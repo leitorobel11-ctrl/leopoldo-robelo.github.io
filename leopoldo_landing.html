@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leopoldo Robelo - Senior Data Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0d7db4;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2d3748;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #0d7db4;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0d7db4 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0d7db4, #06c6e8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            font-weight: 700;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            flex-shrink: 0;
+        }
+
+        .hero-content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.85rem 1.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #0d7db4;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        section.light {
+            background: #f8f9fa;
+        }
+
+        section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #1e3a5f;
+        }
+
+        /* Summary Section */
+        .summary {
+            background: #f8f9fa;
+        }
+
+        .summary-text {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 5px solid #0d7db4;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #0d7db4;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .skill-card h3 {
+            color: #0d7db4;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-card li {
+            padding: 0.5rem 0;
+            color: #4a5568;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-card li:before {
+            content: "▸";
+            color: #0d7db4;
+            margin-right: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid #0d7db4;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .experience-item h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #1e3a5f;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .experience-item .company {
+            color: #0d7db4;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .experience-item .date {
+            color: #718096;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .experience-item p {
+            color: #4a5568;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .experience-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .highlight {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: #2d3748;
+            border-left: 3px solid #06c6e8;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0d7db4 100%);
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-method {
+            text-align: center;
+        }
+
+        .contact-method-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-method a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            word-break: break-all;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-method a:hover {
+            opacity: 0.8;
+        }
+
+        .contact-method label {
+            display: block;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            text-decoration: none;
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .social-link:hover {
+            background: white;
+            color: #0d7db4;
+            transform: translateY(-3px);
+        }
+
+        /* Languages */
+        .languages {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .language-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero .container {
+                gap: 2rem;
+            }
+
+            .hero-image {
+                width: 150px;
+                height: 150px;
+                font-size: 3.5rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 1rem;
+            }
+
+            nav .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.1rem;
+            }
+
+            section {
+                padding: 2.5rem 0;
+            }
+
+            .summary-text,
+            .skill-card,
+            .experience-item,
+            .contact-info {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">LR</div>
+            <ul class="nav-links">
+                <li><a href="#summary">Profile</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <!-- NOTA: Reemplaza "LR" con una etiqueta <img> cuando tengas tu foto:
+            <img src="tu-foto.jpg" alt="Leopoldo Robelo" style="width: 200px; height: 200px; border-radius: 50%; border: 4px solid rgba(255,255,255,0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.2); object-fit: cover;">
+            -->
+            <div class="hero-image">LR</div>
+            <div class="hero-content">
+                <h1>Leopoldo Robelo</h1>
+                <p class="subtitle">Senior Data Analyst & BI Specialist</p>
+                <p>Transforming complex datasets into actionable intelligence. 6+ years driving data-driven decisions across EY, PwC, and LinkedIn.</p>
+                <div class="cta-buttons">
+                    <a href="https://www.linkedin.com/in/leopoldo-robelo-ruiz-a9112b162/?locale=en" target="_blank" class="btn btn-primary">💼 LinkedIn Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Summary -->
+    <section id="summary" class="summary">
+        <div class="container">
+            <h2>Professional Profile</h2>
+            <div class="summary-text">
+                <p>Senior Reporting & Data Analyst with a Public Relations background, combining strategic communication and advanced analytics to deliver executive-ready insights. Experienced in transforming complex datasets into actionable intelligence and designing automated, end-to-end reporting solutions for international stakeholders.</p>
+                <p style="margin-top: 1.5rem;">Specialized in data integrity, compliance systems, and HR analytics. Proficient in Power BI, Tableau, SQL, Salesforce, Oracle, and SAP. Multilingual professional with deep expertise in managing international teams and delivering rapid-response analytics to support executive decision-making.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="light">
+        <div class="container">
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>📊 Business Intelligence</h3>
+                    <ul>
+                        <li>Power BI (Intermediate)</li>
+                        <li>Tableau (Advanced)</li>
+                        <li>SQL (Intermediate)</li>
+                        <li>Advanced Excel & Macros</li>
+                        <li>Power Query</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>💻 Systems & Data</h3>
+                    <ul>
+                        <li>Salesforce CRM</li>
+                        <li>Oracle CRM</li>
+                        <li>SAP</li>
+                        <li>Alteryx (Basic)</li>
+                        <li>ETL & Data Management</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>🌐 Professional Skills</h3>
+                    <ul>
+                        <li>Agile Methodologies</li>
+                        <li>International Stakeholder Management</li>
+                        <li>End-to-End Reporting</li>
+                        <li>Data Integrity & Compliance</li>
+                        <li>Executive Briefings</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <h3 style="color: #1e3a5f; margin-bottom: 1.5rem; font-family: 'Poppins', sans-serif;">Languages</h3>
+                <div class="languages">
+                    <div class="language-badge" style="background: white; border: 2px solid #0d7db4; color: #0d7db4;">🇦🇷 Spanish (Native)</div>
+                    <div class="language-badge" style="background: white; border: 2px solid #0d7db4; color: #0d7db4;">🇬🇧 English (C2 - Proficient)</div>
+                    <div class="language-badge" style="background: white; border: 2px solid #0d7db4; color: #0d7db4;">🇮🇹 Italian (B2)</div>
+                    <div class="language-badge" style="background: white; border: 2px solid #0d7db4; color: #0d7db4;">🇧🇷 Portuguese (B1)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Freelance Data Analyst & Customer Experience Analyst</h3>
+                        <p class="company">Independent</p>
+                    </div>
+                    <div class="date">Dec 2025 – Present</div>
+                </div>
+                <p>Designing ad-hoc control dashboards based on specific client requests to track key performance metrics. Analyzing databases to identify trends and providing actionable insights for strategic decision-making. Managing client CRM platforms to ensure accurate tracking of interactions and data integrity.</p>
+                <div class="experience-highlights">
+                    <div class="highlight">Dashboard design</div>
+                    <div class="highlight">Trend analysis</div>
+                    <div class="highlight">CRM management</div>
+                    <div class="highlight">Client communication</div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Senior Report Data Analyst, HR</h3>
+                        <p class="company">Ernst & Young (EY)</p>
+                    </div>
+                    <div class="date">Mar 2025 – Dec 2025</div>
+                </div>
+                <p>Executed advanced data analytics to deliver customized reporting solutions for high-profile U.S. client portfolios. Designed and implemented database management systems and automation frameworks using Macros and Power Automate. Led international briefings and managed client relations to ensure strategic alignment.</p>
+                <div class="experience-highlights">
+                    <div class="highlight">Advanced analytics</div>
+                    <div class="highlight">Database management</div>
+                    <div class="highlight">Power Automate</div>
+                    <div class="highlight">International briefings</div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Senior Data Analyst & Junior QA</h3>
+                        <p class="company">PricewaterhouseCoopers (PwC)</p>
+                    </div>
+                    <div class="date">Jul 2024 – Dec 2024</div>
+                </div>
+                <p>Managed critical people data ensuring accuracy and integrity for internal decision-making. Enhanced client engagement by administering Salesforce contracts and producing strategic reports during system transitions. Developed Power BI dashboards to visualize performance metrics for executive presentations.</p>
+                <div class="experience-highlights">
+                    <div class="highlight">Power BI dashboards</div>
+                    <div class="highlight">Salesforce contracts</div>
+                    <div class="highlight">Data integrity</div>
+                    <div class="highlight">Executive reporting</div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Junior Data Analyst</h3>
+                        <p class="company">LinkedIn</p>
+                    </div>
+                    <div class="date">Aug 2022 – Dec 2023</div>
+                </div>
+                <p>Managed and protected confidential member data as part of due diligence processes. Implemented fraud-prevention measures and analyzed operational performance through Tableau dashboards. Utilized Oracle CRM to manage client communications, monitor metrics, and oversee support tickets.</p>
+                <div class="experience-highlights">
+                    <div class="highlight">Tableau analytics</div>
+                    <div class="highlight">Data protection</div>
+                    <div class="highlight">Oracle CRM</div>
+                    <div class="highlight">Fraud prevention</div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>HR Assistant / Personnel Analyst</h3>
+                        <p class="company">Ministry of Defense (Argentina)</p>
+                    </div>
+                    <div class="date">Dec 2019 – Aug 2022</div>
+                </div>
+                <p>Managed and updated extensive personnel databases across the three branches of the Argentine Armed Forces, including international deployments, utilizing Excel and Google Sheets. Developed travel budgets and monitored operational activities. Awarded a "Diploma of Honor" for key coordination during the 2019 national elections as part of the joint "Comando Electoral" program.</p>
+                <div class="experience-highlights">
+                    <div class="highlight">Personnel databases</div>
+                    <div class="highlight">Excel & Google Sheets</div>
+                    <div class="highlight">Travel budgets</div>
+                    <div class="highlight">Diploma of Honor</div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3>Volunteer Soldier - HR Benefits & Pensions</h3>
+                        <p class="company">Argentine Army (Colegio Militar de la Nación)</p>
+                    </div>
+                    <div class="date">Oct 2018 – Dec 2019</div>
+                </div>
+                <p>Maintained and updated comprehensive databases for both active-duty and retired personnel, ensuring strict data accuracy and confidentiality. Coordinated benefits and organized activities for civil and military agents, streamlining HR processes. Provided communication support and direct service to military personnel and their families.</p>
+                <div class="experience-highlights">
+                    <div class="highlight">Personnel databases</div>
+                    <div class="highlight">Benefits coordination</div>
+                    <div class="highlight">Data confidentiality</div>
+                    <div class="highlight">Stakeholder communication</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <div class="contact-info">
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-method-icon">📧</div>
+                        <label>Email</label>
+                        <a href="mailto:leito.robel11@gmail.com">leito.robel11@gmail.com</a>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-method-icon">📞</div>
+                        <label>Phone</label>
+                        <a href="tel:+5411300253667">+54 11 3002-5367</a>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-method-icon">💼</div>
+                        <label>Professional</label>
+                        <a href="https://www.linkedin.com/in/leopoldo-robelo-ruiz-a9112b162/?locale=en" target="_blank">LinkedIn Profile</a>
+                    </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <p style="margin-bottom: 1.5rem; opacity: 0.9;">Connect with me on social media</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/leopoldo-robelo-ruiz-a9112b162/?locale=en" target="_blank" class="social-link" title="LinkedIn">in</a>
+                        <a href="mailto:leito.robel11@gmail.com" class="social-link" title="Email">✉</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Leopoldo Robelo. All rights reserved. | Data Analyst | Buenos Aires, Argentina</p>
+        <p style="margin-top: 1rem; opacity: 0.7;"><a href="https://www.linkedin.com/in/leopoldo-robelo-ruiz-a9112b162/?locale=en" target="_blank" style="color: white; text-decoration: none;">LinkedIn: linkedin.com/in/leopoldo-robelo-ruiz</a></p>
+    </footer>
+</body>
+</html>
